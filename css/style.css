@@ -30,16 +30,8 @@ main {
     top: -100%;
     left: 200%;
   }
-  .nft-image {
-    transform: scale(1.015);
-    filter: brightness(1.3);
-    .nft-image::before {
-      filter: brightness(0.5);
-      top: -100%;
-      left: 200%;
-    }
-  }
 }
+
 /* image  */
 .nft-image {
   display: flex;
@@ -49,8 +41,35 @@ main {
 
 #Equilibrium {
   border-radius: 5%;
+  width: 100%;
+}
+
+a.img {
   margin-top: 30px;
+  position: relative;
+  display: block;
   width: 90%;
+}
+
+.img::after {
+  content: "";
+  background: hsla(178, 100%, 50%, 0.3) url("../images/icon-view.svg") no-repeat
+    center;
+  background-size: 5rem;
+  width: 100%;
+  height: 100%;
+  border-radius: 5%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.img:hover::after {
+  opacity: 1;
 }
 /* card content  */
 .card-content {
